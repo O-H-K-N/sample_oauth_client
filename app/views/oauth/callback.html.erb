@@ -1,0 +1,6 @@
+<h1>Oauth#callback</h1>
+<% if @access_token.present? %>
+  <p>Success get access token : <%=@access_token.token %></p>
+<% else %>
+  <p>Failed get access token!!</p>
+<% end %>
