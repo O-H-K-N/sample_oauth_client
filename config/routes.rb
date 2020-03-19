@@ -2,5 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'oauth#index'
   get 'callback', to: 'oauth#callback'
+  get 'freee_callback', to: 'oauth#freee_callback'
   get 'authorization', to: 'oauth#authorization'
+  get 'freee_authorization', to: 'oauth#freee_authorization'
 end
