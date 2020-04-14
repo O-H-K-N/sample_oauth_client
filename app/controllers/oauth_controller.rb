@@ -8,10 +8,10 @@ class OauthController < ApplicationController
   def authorization
     client = OAuth2::Client.new(
       ENV["CLIENT_ID"],
-      nil,
-      # ENV["CLIENT_SECRET"],
+      ENV["CLIENT_SECRET"],
       site: ENV["SITE"],
       authorize_url: ENV["AUTHORIZE_URL"],
+      token_url: ENV["TOKEN_URL"],
     )
 
     authorize_url = client.auth_code.authorize_url(
@@ -41,17 +41,18 @@ class OauthController < ApplicationController
   def callback
     client = OAuth2::Client.new(
       ENV["CLIENT_ID"],
-      # nil,
       ENV["CLIENT_SECRET"],
       site: ENV["SITE"],
       authorize_url: ENV["AUTHORIZE_URL"],
+      token_url: ENV["TOKEN_URL"],
     )
 
     @access_token = client.auth_code.get_token(
       params[:code],
       redirect_uri: ENV["CALLBACK_URI"],
     )
-
+  # rescue StandardError => e
+  #   puts e.message
     # call API
     # response = token.get(
     #   ENV["API_URL"]
@@ -62,7 +63,6 @@ class OauthController < ApplicationController
   def freee_callback
     client = OAuth2::Client.new(
       ENV["FREEE_CLIENT_ID"],
-      # nil,
       ENV["FREEE_CLIENT_SECRET"],
       site: ENV["FREEE_SITE"],
       authorize_url: ENV["FREEE_AUTHORIZE_URL"],
