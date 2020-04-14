@@ -16,7 +16,7 @@ class OauthController < ApplicationController
 
     authorize_url = client.auth_code.authorize_url(
       redirect_uri: ENV["CALLBACK_URI"],
-      # scope: ENV["SCOPE"],
+      scope: ENV["SCOPE"],
     )
     redirect_to authorize_url
   end

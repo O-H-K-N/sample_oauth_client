@@ -18,6 +18,7 @@ AUTHORIZE_URL=oauth/authorize
 CALLBACK_URI=http://localhost:3002/callback
 OAUTH_PROVIDER_URL=http://localhost:3000/oauth/authorize
 TOKEN_URL=oauth/token
+SCOPE=public......
 
 # API_URL=http://localhost:3000/v1/me
 
