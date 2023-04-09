@@ -1,8 +1,0 @@
-<h1>Oauth#callback</h1>
-<% if @access_token.present? %>
-  <p>Success get access token : <%=@access_token.token %></p>
-  <p>           refresh_token : <%=@access_token.refresh_token %></p>
-  <p>              expires_in : <%=@access_token.expires_in %></p>
-<% else %>
-  <p>Failed get access token!!</p>
-<% end %>

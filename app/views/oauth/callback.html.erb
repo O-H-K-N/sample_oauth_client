@@ -1,8 +1,8 @@
-<h1>Oauth#callback</h1>
+<h1>連携完了</h1>
 <% if @access_token.present? %>
-  <p>Success get access token : <%=@access_token.token %></p>
-  <p>           refresh_token : <%=@access_token.refresh_token %></p>
-  <p>              expires_in : <%=@access_token.expires_in %></p>
+  <p>アクセストークン : <%=@access_token.token %></p>
+  <p>リフレッシュトークン: <%=@access_token.refresh_token %></p>
+  <p>アクセストークンの期限: <%=@access_token.expires_in %></p>
 <% else %>
-  <p>Failed get access token!!</p>
+  <p>連携が拒否されました</p>
 <% end %>
